@@ -23,3 +23,21 @@ class MongoDBClient:
         except PyMongoError as e:
             #print(f"Erro ao inserir documento: {e}")
             return {'Erro': str(e)}
+        
+    def update_document(self, collection_name: str, query: dict, update: dict):
+        try:
+            collection = self.db[collection_name]
+            result = collection.update_one(query, {"$set": update})
+            return {'modified_count': result.modified_count}
+        except PyMongoError as e:
+            #print(f"Erro ao atualizar documento: {e}")
+            return {'Erro': str(e)}
+
+    def delete_document(self, collection_name: str, query: dict):
+        try:
+            collection = self.db[collection_name]
+            result = collection.delete_one(query)
+            return {'deleted_count': result.deleted_count}
+        except PyMongoError as e:
+            #print(f"Erro ao remover documento: {e}")
+            return {'Erro': str(e)}
