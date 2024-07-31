@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "028be288-b28a-4227-9712-8f96a0133eb7",
+		"name": "Documentação",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26954090"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/usuarios/criar_usuario/?nome=Andre&sobrenome=Farias",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios",
+								"criar_usuario",
+								""
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Andre"
+								},
+								{
+									"key": "sobrenome",
+									"value": "Farias"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/usuarios/criar_usuario/?nome=Andre&sobrenome=Farias",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"usuarios",
+										"criar_usuario",
+										""
+									],
+									"query": [
+										{
+											"key": "nome",
+											"value": "Andre"
+										},
+										{
+											"key": "sobrenome",
+											"value": "Farias"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Wed, 31 Jul 2024 19:32:19 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "55"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Token\": \"xE_Reh-blXe5ETDPyKIAU0gTtT51BJkwfva-uQ0MT_Q\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}

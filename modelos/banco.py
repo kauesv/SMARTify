@@ -21,5 +21,5 @@ class MongoDBClient:
             result = collection.insert_one(document)
             return {'id': result.inserted_id}
         except PyMongoError as e:
-            print(f"Erro ao inserir documento: {e}")
+            #print(f"Erro ao inserir documento: {e}")
             return {'Erro': str(e)}
