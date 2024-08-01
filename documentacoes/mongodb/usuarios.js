@@ -34,9 +34,7 @@ db.createCollection("usuarios", {
     }
 });
 
-
-//db.usuarios.createIndex({ "token": 1 }, { unique: true })
-
+db.usuarios.createIndex({ nome: 1, sobrenome: 1 },{ unique: true });
 
 db.usuarios.insertOne({
   "nome": "Kauê",

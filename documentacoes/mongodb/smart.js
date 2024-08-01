@@ -53,8 +53,6 @@ db.createCollection("smart", {
     }
 });
 
-db.smart.createIndex({ "usuario_id": 1 }, { unique: true })
-
 db.smart. insertOne({
   "usuario_id": "66a99e6d63cf723dafba4cef",
   "especifica": "texto",

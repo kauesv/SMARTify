@@ -19,11 +19,27 @@ class MongoDBClient:
         try:
             collection = self.db[collection_name]
             result = collection.insert_one(document)
-            return {'id': result.inserted_id}
+            return {'_id': result.inserted_id}
         except PyMongoError as e:
             #print(f"Erro ao inserir documento: {e}")
             return {'Erro': str(e)}
-        
+
+    def find_one_document(self, collection_name: str, query: dict):
+        try:
+            collection = self.db[collection_name]
+            return collection.find_one(query)
+        except PyMongoError as e:
+            #print(f"Erro ao encontrar documento: {e}")
+            return {'Erro': str(e)}
+
+    def find_document(self, collection_name: str, query: dict):
+        try:
+            collection = self.db[collection_name]
+            return collection.find(query)
+        except PyMongoError as e:
+            #print(f"Erro ao encontrar documento: {e}")
+            return {'Erro': str(e)}
+
     def update_document(self, collection_name: str, query: dict, update: dict):
         try:
             collection = self.db[collection_name]
