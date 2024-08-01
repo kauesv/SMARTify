@@ -20,7 +20,7 @@ Em desenvolvimento, aguarde...
 ### 4. Ativar Ambiente Virtual
 - Ative o ambiente virtual (Windows):
     ```
-    env\Scripts\Activate
+    venv\Scripts\Activate
     ```
 
 ### 5. Instalar Dependências do Projeto
@@ -48,7 +48,9 @@ Em desenvolvimento, aguarde...
     - Acesse o NoSQLBooster.
     - Vá até a pasta documentacoes/mongodb, copie os scripts de criação das coleções de usuários e smart, e execute-os no NoSQLBooster.
 
-### 8. Importar Coleções para o Postman
+### 8. Teste das APIs
 - Use o arquivo de documentação da API:
     - Encontre o arquivo na pasta documentacoes/api.
     - Importe-o no Postman para testar as rotas da API.
+- Ou use o docs do próprio FastAPI:
+    - localhost:8000/docs/
