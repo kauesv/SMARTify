@@ -89,91 +89,7 @@
 					]
 				},
 				{
-					"name": "usuarios",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"66aadc350f83c96f717763cd\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"usuarios",
-								"66aadc350f83c96f717763cd"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "66aadc350f83c96f717763cd",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "200",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{URL}}/usuarios/?id=66aadc350f83c96f717763cd",
-									"host": [
-										"{{URL}}"
-									],
-									"path": [
-										"usuarios",
-										""
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "66aadc350f83c96f717763cd"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "date",
-									"value": "Thu, 01 Aug 2024 02:28:09 GMT"
-								},
-								{
-									"key": "server",
-									"value": "uvicorn"
-								},
-								{
-									"key": "content-length",
-									"value": "173"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": \"66aadc350f83c96f717763cd\",\n    \"nome\": \"Andrea\",\n    \"sobrenome\": \"Farias\",\n    \"criado_em\": \"2024-07-31 21:52:05.324000\",\n    \"atualizado_em\": \"2024-07-31 21:52:05.324000\",\n    \"deletado\": false\n}"
-						}
-					]
-				},
-				{
-					"name": "usuarios",
+					"name": "usuarios_list",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -230,24 +146,93 @@
 							"body": "[\n    {\n        \"id\": \"66aaaba9ab3d5c4e9e8363ce\",\n        \"nome\": \"Andre\",\n        \"sobrenome\": \"Farias\",\n        \"criado_em\": \"2024-07-31 18:24:57.340000\",\n        \"atualizado_em\": \"2024-07-31 18:24:57.340000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aadc350f83c96f717763cd\",\n        \"nome\": \"Andrea\",\n        \"sobrenome\": \"Farias\",\n        \"criado_em\": \"2024-07-31 21:52:05.324000\",\n        \"atualizado_em\": \"2024-07-31 21:52:05.324000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aadce22aba3b99ef69e7ca\",\n        \"nome\": \"Andrea2\",\n        \"sobrenome\": \"Farias\",\n        \"criado_em\": \"2024-07-31 21:54:58.714000\",\n        \"atualizado_em\": \"2024-07-31 21:54:58.714000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aadf21cc043dd3a4be982c\",\n        \"nome\": \"Andre3\",\n        \"sobrenome\": \"Farias\",\n        \"criado_em\": \"2024-07-31 22:04:33.344000\",\n        \"atualizado_em\": \"2024-07-31 22:04:33.344000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aaf9b119a7b2ded6155139\",\n        \"nome\": \"Andre5\",\n        \"sobrenome\": \"Farias\",\n        \"criado_em\": \"2024-07-31 23:57:53.506000\",\n        \"atualizado_em\": \"2024-07-31 23:57:53.506000\",\n        \"deletado\": false\n    }\n]"
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "smart",
-			"item": [
+				},
 				{
-					"name": "smart_list",
+					"name": "usuarios_id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/smart/",
+							"raw": "{{URL}}/usuarios/id/66aadc350f83c96f717763cd",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"smart",
+								"usuarios",
+								"id",
+								"66aadc350f83c96f717763cd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/usuarios/id/66aadc350f83c96f717763cd",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"usuarios",
+										"id",
+										"66aadc350f83c96f717763cd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Thu, 01 Aug 2024 18:19:47 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "173"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"66aadc350f83c96f717763cd\",\n    \"nome\": \"Andrea\",\n    \"sobrenome\": \"Farias\",\n    \"criado_em\": \"2024-07-31 21:52:05.324000\",\n    \"atualizado_em\": \"2024-07-31 21:52:05.324000\",\n    \"deletado\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Andre\",\r\n    \"sobrenome\": \"Farias\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usuarios/usuario/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios",
+								"usuario",
 								""
 							]
 						}
@@ -259,13 +244,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{URL}}/smart/",
+									"raw": "{{URL}}/usuarios/id/66aadc350f83c96f717763cd",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
-										"smart",
-										""
+										"usuarios",
+										"id",
+										"66aadc350f83c96f717763cd"
 									]
 								}
 							},
@@ -275,7 +261,7 @@
 							"header": [
 								{
 									"key": "date",
-									"value": "Thu, 01 Aug 2024 15:04:26 GMT"
+									"value": "Thu, 01 Aug 2024 18:19:47 GMT"
 								},
 								{
 									"key": "server",
@@ -283,7 +269,7 @@
 								},
 								{
 									"key": "content-length",
-									"value": "2348"
+									"value": "173"
 								},
 								{
 									"key": "content-type",
@@ -291,10 +277,169 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": \"66aba0b84982e4b61ab46815\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:32.492000\",\n        \"atualizado_em\": \"2024-08-01 11:50:32.492000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bc4982e4b61ab46816\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:36.130000\",\n        \"atualizado_em\": \"2024-08-01 11:50:36.130000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bc4982e4b61ab46817\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:36.928000\",\n        \"atualizado_em\": \"2024-08-01 11:50:36.928000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bd4982e4b61ab46818\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:37.778000\",\n        \"atualizado_em\": \"2024-08-01 11:50:37.778000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0be4982e4b61ab46819\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:38.501000\",\n        \"atualizado_em\": \"2024-08-01 11:50:38.501000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba1b94e651aa2c3c3fdcb\",\n        \"usuario_id\": \"5\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:54:49.045000\",\n        \"atualizado_em\": \"2024-08-01 11:54:49.045000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba1ba4e651aa2c3c3fdcc\",\n        \"usuario_id\": \"5\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:54:50.060000\",\n        \"atualizado_em\": \"2024-08-01 11:54:50.060000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba1bb4e651aa2c3c3fdcd\",\n        \"usuario_id\": \"5\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:54:51.631000\",\n        \"atualizado_em\": \"2024-08-01 11:54:51.631000\",\n        \"deletado\": false\n    }\n]"
+							"body": "{\n    \"id\": \"66aadc350f83c96f717763cd\",\n    \"nome\": \"Andrea\",\n    \"sobrenome\": \"Farias\",\n    \"criado_em\": \"2024-07-31 21:52:05.324000\",\n    \"atualizado_em\": \"2024-07-31 21:52:05.324000\",\n    \"deletado\": false\n}"
 						}
 					]
 				},
+				{
+					"name": "usuarios",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Andre_atualizado\",\r\n    \"sobrenome\": \"Farias_atualizado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios",
+								"66aadc350f83c96f717763cd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Andre_atualizado\",\r\n    \"sobrenome\": \"Farias_atualizado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"usuarios",
+										"66aadc350f83c96f717763cd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Thu, 01 Aug 2024 18:31:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "20"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"modified_count\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "usuarios",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sobrenome\": \"Farias_atualizado2\",\r\n    \"deletado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios",
+								"66aadc350f83c96f717763cd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sobrenome\": \"Farias_atualizado2\",\r\n    \"deletado\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"usuarios",
+										"66aadc350f83c96f717763cd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Thu, 01 Aug 2024 18:33:29 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "20"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"modified_count\": 1\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "smart",
+			"item": [
 				{
 					"name": "smart",
 					"request": {
@@ -422,27 +567,18 @@
 					]
 				},
 				{
-					"name": "smart",
+					"name": "smart_list",
 					"request": {
-						"method": "PATCH",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"deletado\": true,\r\n    \"status\": \"Concluída\"\r\n    }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+							"raw": "{{URL}}/smart/",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"smart",
-								"66abaae1bc89a6a8c5e66db4"
+								""
 							]
 						}
 					},
@@ -450,25 +586,16 @@
 						{
 							"name": "200",
 							"originalRequest": {
-								"method": "PATCH",
+								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"deletado\": true,\r\n    \"status\": \"Concluída\"\r\n    }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+									"raw": "{{URL}}/smart/",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"smart",
-										"66abaae1bc89a6a8c5e66db4"
+										""
 									]
 								}
 							},
@@ -478,7 +605,7 @@
 							"header": [
 								{
 									"key": "date",
-									"value": "Thu, 01 Aug 2024 16:02:21 GMT"
+									"value": "Thu, 01 Aug 2024 15:04:26 GMT"
 								},
 								{
 									"key": "server",
@@ -486,7 +613,7 @@
 								},
 								{
 									"key": "content-length",
-									"value": "20"
+									"value": "2348"
 								},
 								{
 									"key": "content-type",
@@ -494,89 +621,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"modified_count\": 1\n}"
+							"body": "[\n    {\n        \"id\": \"66aba0b84982e4b61ab46815\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:32.492000\",\n        \"atualizado_em\": \"2024-08-01 11:50:32.492000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bc4982e4b61ab46816\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:36.130000\",\n        \"atualizado_em\": \"2024-08-01 11:50:36.130000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bc4982e4b61ab46817\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:36.928000\",\n        \"atualizado_em\": \"2024-08-01 11:50:36.928000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bd4982e4b61ab46818\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:37.778000\",\n        \"atualizado_em\": \"2024-08-01 11:50:37.778000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0be4982e4b61ab46819\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:38.501000\",\n        \"atualizado_em\": \"2024-08-01 11:50:38.501000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba1b94e651aa2c3c3fdcb\",\n        \"usuario_id\": \"5\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:54:49.045000\",\n        \"atualizado_em\": \"2024-08-01 11:54:49.045000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba1ba4e651aa2c3c3fdcc\",\n        \"usuario_id\": \"5\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:54:50.060000\",\n        \"atualizado_em\": \"2024-08-01 11:54:50.060000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba1bb4e651aa2c3c3fdcd\",\n        \"usuario_id\": \"5\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:54:51.631000\",\n        \"atualizado_em\": \"2024-08-01 11:54:51.631000\",\n        \"deletado\": false\n    }\n]"
 						}
 					]
 				},
 				{
-					"name": "smart",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"especifica\": \"Novo valor\",\r\n    \"mensuravel\": \"Novo valor\",\r\n    \"atingivel\": \"Novo valor\",\r\n    \"relevante\": \"Novo valor\",\r\n    \"temporizavel\": \"Novo valor\",\r\n    \"status\": \"Iniciada\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"smart",
-								"66abaae1bc89a6a8c5e66db4"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "200",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"especifica\": \"Novo valor\",\r\n    \"mensuravel\": \"Novo valor\",\r\n    \"atingivel\": \"Novo valor\",\r\n    \"relevante\": \"Novo valor\",\r\n    \"temporizavel\": \"Novo valor\",\r\n    \"status\": \"Iniciada\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
-									"host": [
-										"{{URL}}"
-									],
-									"path": [
-										"smart",
-										"66abaae1bc89a6a8c5e66db4"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "date",
-									"value": "Thu, 01 Aug 2024 16:14:05 GMT"
-								},
-								{
-									"key": "server",
-									"value": "uvicorn"
-								},
-								{
-									"key": "content-length",
-									"value": "20"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"modified_count\": 1\n}"
-						}
-					]
-				},
-				{
-					"name": "smart",
+					"name": "smart_id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -693,6 +743,160 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"id\": \"66aba0b84982e4b61ab46815\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:32.492000\",\n        \"atualizado_em\": \"2024-08-01 11:50:32.492000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bc4982e4b61ab46816\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:36.130000\",\n        \"atualizado_em\": \"2024-08-01 11:50:36.130000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bc4982e4b61ab46817\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:36.928000\",\n        \"atualizado_em\": \"2024-08-01 11:50:36.928000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0bd4982e4b61ab46818\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:37.778000\",\n        \"atualizado_em\": \"2024-08-01 11:50:37.778000\",\n        \"deletado\": false\n    },\n    {\n        \"id\": \"66aba0be4982e4b61ab46819\",\n        \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\n        \"especifica\": \"text\",\n        \"mensuravel\": \"text\",\n        \"atingivel\": \"text\",\n        \"relevante\": \"text\",\n        \"temporizavel\": \"text\",\n        \"status\": \"Não Iniciada\",\n        \"criado_em\": \"2024-08-01 11:50:38.501000\",\n        \"atualizado_em\": \"2024-08-01 11:50:38.501000\",\n        \"deletado\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "smart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"especifica\": \"Novo valor\",\r\n    \"mensuravel\": \"Novo valor\",\r\n    \"atingivel\": \"Novo valor\",\r\n    \"relevante\": \"Novo valor\",\r\n    \"temporizavel\": \"Novo valor\",\r\n    \"status\": \"Iniciada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"smart",
+								"66abaae1bc89a6a8c5e66db4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"especifica\": \"Novo valor\",\r\n    \"mensuravel\": \"Novo valor\",\r\n    \"atingivel\": \"Novo valor\",\r\n    \"relevante\": \"Novo valor\",\r\n    \"temporizavel\": \"Novo valor\",\r\n    \"status\": \"Iniciada\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"smart",
+										"66abaae1bc89a6a8c5e66db4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Thu, 01 Aug 2024 16:14:05 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "20"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"modified_count\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "smart",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deletado\": true,\r\n    \"status\": \"Concluída\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"smart",
+								"66abaae1bc89a6a8c5e66db4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deletado\": true,\r\n    \"status\": \"Concluída\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"smart",
+										"66abaae1bc89a6a8c5e66db4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Thu, 01 Aug 2024 16:02:21 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "20"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"modified_count\": 1\n}"
 						}
 					]
 				}
