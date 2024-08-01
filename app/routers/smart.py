@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from modelos.banco import MongoDBClient
 from dotenv import load_dotenv
@@ -8,19 +7,21 @@ from bson import ObjectId
 import os
 from typing import Dict, Any
 
-router = APIRouter()
 
 # --------------
 #   configs
 load_dotenv(dotenv_path='config/config.env')
 uri = os.getenv('URI')
 database_name = os.getenv('DATABASE_NAME')
-api_version = os.getenv('API_VERSION')
+
+router = APIRouter()
 
 # --------------
 #   instancia o banco
 mongo_client = MongoDBClient(str(uri), str(database_name))
 
+# --------------
+#   
 @router.post("/smart/", tags=["smart"])
 async def post_smart(document: Dict[str, Any]):
     """Cria novo smart"""
@@ -40,7 +41,9 @@ async def post_smart(document: Dict[str, Any]):
         user_id = result['_id']
         mensagem = {'id': str(user_id)}
         return JSONResponse(mensagem, status_code=200)
-    
+
+# --------------
+#   
 @router.get("/smart/id/{id}", tags=["smart"])
 async def get_smart_by_id(id: str):
     """busca um smart pelo id"""
@@ -67,6 +70,8 @@ async def get_smart_by_id(id: str):
 
         return JSONResponse(result, status_code=200)
 
+# --------------
+#   
 @router.get("/smart/usuario/{usuario_id}", tags=["smart"])
 async def get_smart_by_usuario_id(usuario_id: str):
     """busca uma lista de smarts pelo usuario_id"""
@@ -91,6 +96,8 @@ async def get_smart_by_usuario_id(usuario_id: str):
 
     return JSONResponse(list_objs, status_code=200)
 
+# --------------
+#   
 @router.get("/smart/", tags=["smart"])
 async def get_list_smart():
     """lista os smarts"""
@@ -113,3 +120,40 @@ async def get_list_smart():
         }
         list_users.append(result)
     return JSONResponse(list_users, status_code=200)
+
+# --------------
+#   
+@router.put("/smart/{id}", tags=["smart"])
+async def put_smart(id: str, document: Dict[str, Any]):
+    """Atualiza todos os campos"""
+
+    if 'usuario_id' in document:
+        return JSONResponse({"mensage": "Não atualize o usuario_id"}, status_code=400)
+
+    document.update({
+        "atualizado_em": datetime.now(),
+        })
+
+    result = mongo_client.update_document("smart", {"_id": ObjectId(str(id))}, document)
+
+    if 'Erro' in result:
+        return JSONResponse(result, status_code=400)
+    else:
+        return JSONResponse(result, status_code=200)
+
+# --------------
+#   Usado para atualizar também o campo de "deletado"
+@router.patch("/smart/{id}", tags=["smart"])
+async def patch_smart(id: str, document: Dict[str, Any]):
+    """Atualiza um campo específico"""
+
+    document.update({
+        "atualizado_em": datetime.now(),
+        })
+
+    result = mongo_client.update_document("smart", {"_id": ObjectId(str(id))}, document)
+
+    if 'Erro' in result:
+        return JSONResponse(result, status_code=400)
+    else:
+        return JSONResponse(result, status_code=200)

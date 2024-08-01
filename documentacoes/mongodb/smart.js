@@ -12,23 +12,23 @@ db.createCollection("smart", {
                     description: ""
                 },
                 especifica: {
-                    bsonType: "string",
+                    bsonType: ["string", "null"],
                     description: ""
                 },
                 mensuravel: {
-                    bsonType: "string",
+                    bsonType: ["string", "null"],
                     description: ""
                 },
                 atingivel: {
-                    bsonType: "string",
+                    bsonType: ["string", "null"],
                     description: ""
                 },
                 relevante: {
-                    bsonType: "string",
+                    bsonType: ["string", "null"],
                     description: ""
                 },
                 temporizavel: {
-                    bsonType: "string",
+                    bsonType: ["string", "null"],
                     description: ""
                 },
                 status: {
