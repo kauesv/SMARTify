@@ -302,7 +302,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"usuario_id\": \"5\",\r\n    \"especifica\": \"text\",\r\n    \"mensuravel\": \"text\",\r\n    \"atingivel\": \"text\",\r\n    \"relevante\": \"text\",\r\n    \"temporizavel\": \"text\",\r\n    \"status\": \"Não Iniciada\"\r\n    }",
+							"raw": "{\r\n    \"usuario_id\": \"66aaaba9ab3d5c4e9e8363cb\",\r\n    \"especifica\": \"text\",\r\n    \"mensuravel\": \"text\",\r\n    \"atingivel\": \"text\",\r\n    \"relevante\": \"text\",\r\n    \"temporizavel\": \"text\",\r\n    \"status\": \"Não Iniciada\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -418,6 +418,160 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"Erro\": \"E11000 duplicate key error collection: SMARTify.smart index: usuario_id_1 dup key: { usuario_id: \\\"66aaaba9ab3d5c4e9e8363cb\\\" }, full error: {'index': 0, 'code': 11000, 'errmsg': 'E11000 duplicate key error collection: SMARTify.smart index: usuario_id_1 dup key: { usuario_id: \\\"66aaaba9ab3d5c4e9e8363cb\\\" }', 'keyPattern': {'usuario_id': 1}, 'keyValue': {'usuario_id': '66aaaba9ab3d5c4e9e8363cb'}}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "smart",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deletado\": true,\r\n    \"status\": \"Concluída\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"smart",
+								"66abaae1bc89a6a8c5e66db4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deletado\": true,\r\n    \"status\": \"Concluída\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"smart",
+										"66abaae1bc89a6a8c5e66db4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Thu, 01 Aug 2024 16:02:21 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "20"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"modified_count\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "smart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"especifica\": \"Novo valor\",\r\n    \"mensuravel\": \"Novo valor\",\r\n    \"atingivel\": \"Novo valor\",\r\n    \"relevante\": \"Novo valor\",\r\n    \"temporizavel\": \"Novo valor\",\r\n    \"status\": \"Iniciada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"smart",
+								"66abaae1bc89a6a8c5e66db4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"especifica\": \"Novo valor\",\r\n    \"mensuravel\": \"Novo valor\",\r\n    \"atingivel\": \"Novo valor\",\r\n    \"relevante\": \"Novo valor\",\r\n    \"temporizavel\": \"Novo valor\",\r\n    \"status\": \"Iniciada\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"smart",
+										"66abaae1bc89a6a8c5e66db4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Thu, 01 Aug 2024 16:14:05 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "20"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"modified_count\": 1\n}"
 						}
 					]
 				},
