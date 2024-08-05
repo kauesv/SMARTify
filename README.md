@@ -36,17 +36,9 @@ O projeto consiste em uma aplicação backend que utiliza APIs para criar e gere
     ```
 
 ### 5. Instalar Dependências do Projeto
-- Instale o FastAPI:
+- Instale usando o arquivo requirements:
     ```
-    pip install fastapi
-    ```
-- Instale o Uvicorn:
-    ```
-    pip install uvicorn
-    ```
-- Instale o Pymongo:
-    ```
-    pip install pymongo
+    pip install -r requirements.txt 
     ```
 
 ### 6. Iniciar o Servidor
