@@ -32,5 +32,11 @@ def database_name():
 # --------------
 #   Global variable
 @pytest.fixture(scope='session')
-def collection_name():
-    return os.getenv('TEST_DATABASE_COLLECTION_NAME')
+def collection_name_usuarios():
+    return os.getenv('TEST_DATABASE_COLLECTION_USUARIOS')
+
+# --------------
+#   Global variable
+@pytest.fixture(scope='session')
+def collection_name_smart():
+    return os.getenv('TEST_DATABASE_COLLECTION_SMART')
