@@ -1,3 +1,5 @@
+use SMARTify
+
 db.createCollection("smart", {
     validator: {
         $jsonSchema: {
@@ -53,19 +55,19 @@ db.createCollection("smart", {
     }
 });
 
-db.smart. insertOne({
-  "usuario_id": "66a99e6d63cf723dafba4cef",
-  "especifica": "texto",
-  "mensuravel": "texto",
-  "atingivel": "texto",
-  "relevante": "texto",
-  "temporizavel": "texto",
-  "status": "Não Iniciada",
-  "criado_em": {
-    "$date": "2024-10-10T03:00:00.000Z"
-  },
-  "atualizado_em": {
-    "$date": "2024-10-10T03:00:00.000Z"
-  },
-  "deletado": false
-})
+// db.smart. insertOne({
+//   "usuario_id": "66a99e6d63cf723dafba4cef",
+//   "especifica": "texto",
+//   "mensuravel": "texto",
+//   "atingivel": "texto",
+//   "relevante": "texto",
+//   "temporizavel": "texto",
+//   "status": "Não Iniciada",
+//   "criado_em": {
+//     "$date": "2024-10-10T03:00:00.000Z"
+//   },
+//   "atualizado_em": {
+//     "$date": "2024-10-10T03:00:00.000Z"
+//   },
+//   "deletado": false
+// })
