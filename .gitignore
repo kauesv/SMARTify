@@ -4,3 +4,9 @@ venv/
 
 #arquivos:
 anotacoes.txt
+
+#IDE
+.vscode/
+
+#Testes:
+.pytest_cache/

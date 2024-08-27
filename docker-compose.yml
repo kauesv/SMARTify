@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smartify-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    env_file:
+      - ./config/config.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./documentacoes/mongodb/usuarios.js:/docker-entrypoint-initdb.d/usuarios.js:ro
+      - ./documentacoes/mongodb/smart.js:/docker-entrypoint-initdb.d/smart.js:ro
+    networks:
+      - app-network
+
+volumes:
+  mongo_data:
+
+networks:
+  app-network:
+    driver: bridge
