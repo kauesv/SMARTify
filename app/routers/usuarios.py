@@ -14,11 +14,13 @@ load_dotenv(dotenv_path='config/config.env')
 uri = os.getenv('URI')
 database_name = os.getenv('DATABASE_NAME')
 
-router = APIRouter()
-
 # --------------
 #   instancia o banco
 mongo_client = MongoDBClient(str(uri), str(database_name))
+
+# --------------
+#   
+router = APIRouter()
 
 # --------------
 #   

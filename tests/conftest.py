@@ -2,6 +2,8 @@ import pytest
 import os
 from modelos.banco import MongoDBClient
 from dotenv import load_dotenv
+from bson import ObjectId
+from datetime import datetime
 
 
 # --------------
@@ -40,3 +42,51 @@ def collection_name_usuarios():
 @pytest.fixture(scope='session')
 def collection_name_smart():
     return os.getenv('TEST_DATABASE_COLLECTION_SMART')
+
+# --------------
+#   Global variable
+@pytest.fixture(scope='session')
+def url_api():
+    return os.getenv('URL_API')
+
+# --------------
+#   Global variable
+@pytest.fixture(scope='session')
+def test_document_sem_data():
+    """Simulação de dados para os testes"""
+    return {
+        "usuario_id": "BackendTest",
+        "especifica": "Exemplo específico",
+        "mensuravel": "Exemplo mensurável",
+        "atingivel": "Exemplo atingível",
+        "relevante": "Exemplo relevante",
+        "temporizavel": "Exemplo temporizável",
+        "status": "Não Iniciada"
+    }
+
+# --------------
+#   Global variable
+@pytest.fixture(scope='session')
+def test_document_com_data():
+    """Simulação de dados para os testes"""
+    return {
+        "usuario_id": "BackendTest",
+        "especifica": "Exemplo específico",
+        "mensuravel": "Exemplo mensurável",
+        "atingivel": "Exemplo atingível",
+        "relevante": "Exemplo relevante",
+        "temporizavel": "Exemplo temporizável",
+        "status": "Não Iniciada",
+        "criado_em": datetime.now(),
+        "atualizado_em": datetime.now(),
+        "deletado": False
+    }
+
+# --------------
+#   Global variable
+@pytest.fixture(scope='session')
+def test_id():
+    """ID para os testes"""
+    test_id = str(ObjectId())
+
+    return test_id
