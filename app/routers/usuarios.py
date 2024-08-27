@@ -51,19 +51,22 @@ async def get_usuario_by_id(id: str):
     """busca um usuário"""
     obj = mongo_client.find_one_document("usuarios", {"_id": ObjectId(str(id))})
 
-    result = {
-        "id": str(obj["_id"]),
-        "nome": obj["nome"],
-        "sobrenome": obj["sobrenome"],
-        "criado_em": str(obj["criado_em"]),
-        "atualizado_em": str(obj["atualizado_em"]),
-        "deletado": obj["deletado"]
-    }
+    if obj:
+        result = {
+            "id": str(obj["_id"]),
+            "nome": obj["nome"],
+            "sobrenome": obj["sobrenome"],
+            "criado_em": str(obj["criado_em"]),
+            "atualizado_em": str(obj["atualizado_em"]),
+            "deletado": obj["deletado"]
+        }
 
-    if 'Erro' in obj:
-        return JSONResponse(obj, status_code=400)
+        if 'Erro' in obj:
+            return JSONResponse(obj, status_code=400)
+        else:
+            return JSONResponse(result, status_code=200)
     else:
-        return JSONResponse(result, status_code=200)
+        return JSONResponse({"Message": "ID não encontrado"}, status_code=404)
 
 # --------------
 #   
