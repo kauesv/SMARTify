@@ -74,7 +74,6 @@ async def get_list_usuario():
 
     list_users = []
     for obj in result:
-        print(obj)
         result = {
             "id": str(obj["_id"]),
             "nome": obj["nome"],
@@ -106,7 +105,7 @@ async def get_usuario_by_document(document: Dict[str, Any]):
 
 # --------------
 #   
-@router.put("/usuarios/{id}", tags=["usuarios"])
+@router.put("/usuarios/id/{id}", tags=["usuarios"])
 async def put_usuario(id: str, document: Dict[str, Any]):
     """Atualiza todos os campos"""
 
@@ -123,7 +122,7 @@ async def put_usuario(id: str, document: Dict[str, Any]):
 
 # --------------
 #   Usado para atualizar também o campo de "deletado"
-@router.patch("/usuarios/{id}", tags=["usuarios"])
+@router.patch("/usuarios/id/{id}", tags=["usuarios"])
 async def patch_usuario(id: str, document: Dict[str, Any]):
     """Atualiza um ou mais campos"""
 
@@ -132,6 +131,19 @@ async def patch_usuario(id: str, document: Dict[str, Any]):
         })
 
     result = mongo_client.update_document("usuarios", {"_id": ObjectId(str(id))}, document)
+
+    if 'Erro' in result:
+        return JSONResponse(result, status_code=400)
+    else:
+        return JSONResponse(result, status_code=200)
+    
+# --------------
+#   Usado para atualizar também o campo de "deletado"
+@router.delete("/usuarios/id/{id}", tags=["smart"])
+async def delete_usuario(id: str):
+    """Deleta um documento específico"""
+
+    result = mongo_client.delete_document("usuarios", {"_id": ObjectId(str(id))})
 
     if 'Erro' in result:
         return JSONResponse(result, status_code=400)

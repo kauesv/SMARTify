@@ -85,6 +85,16 @@ def test_document_com_data():
 # --------------
 #   Global variable
 @pytest.fixture(scope='session')
+def test_document_usuarios():
+    """Simulação de dados para os testes"""
+    return {
+        "nome": "BackendTest",
+        "sobrenome": "BackendTest"
+    }
+
+# --------------
+#   Global variable
+@pytest.fixture(scope='session')
 def test_id():
     """ID para os testes"""
     test_id = str(ObjectId())

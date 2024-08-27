@@ -73,7 +73,7 @@ class TestSmartAPI:
         response_post = client.post("/smart/", json=test_document_sem_data)
         obj_id = str(response_post.json()["id"])
 
-        response_put = client.put(f"/smart/id/{obj_id}", json={
+        response_put = client.patch(f"/smart/id/{obj_id}", json={
             "deletado": True,
             "status": "Concluída"
         })
