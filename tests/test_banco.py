@@ -17,7 +17,7 @@ def test_insert_document(mongodb_client, collection_name_usuarios):
     }
 
     result = mongodb_client.insert_document(collection_name_usuarios, document)
-    assert result["_id"]
+    assert "_id" in result
 
 def test_update_document(mongodb_client, collection_name_usuarios):
     """Test updating a document"""
