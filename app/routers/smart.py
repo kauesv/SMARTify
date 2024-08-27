@@ -14,11 +14,13 @@ load_dotenv(dotenv_path='config/config.env')
 uri = os.getenv('URI')
 database_name = os.getenv('DATABASE_NAME')
 
-router = APIRouter()
-
 # --------------
 #   instancia o banco
 mongo_client = MongoDBClient(str(uri), str(database_name))
+
+# --------------
+#   
+router = APIRouter()
 
 # --------------
 #   
@@ -123,7 +125,7 @@ async def get_list_smart():
 
 # --------------
 #   
-@router.put("/smart/{id}", tags=["smart"])
+@router.put("/smart/id/{id}", tags=["smart"])
 async def put_smart(id: str, document: Dict[str, Any]):
     """Atualiza todos os campos"""
 
@@ -143,7 +145,7 @@ async def put_smart(id: str, document: Dict[str, Any]):
 
 # --------------
 #   Usado para atualizar também o campo de "deletado"
-@router.patch("/smart/{id}", tags=["smart"])
+@router.patch("/smart/id/{id}", tags=["smart"])
 async def patch_smart(id: str, document: Dict[str, Any]):
     """Atualiza um campo específico"""
 
@@ -152,6 +154,19 @@ async def patch_smart(id: str, document: Dict[str, Any]):
         })
 
     result = mongo_client.update_document("smart", {"_id": ObjectId(str(id))}, document)
+
+    if 'Erro' in result:
+        return JSONResponse(result, status_code=400)
+    else:
+        return JSONResponse(result, status_code=200)
+    
+# --------------
+#   Usado para atualizar também o campo de "deletado"
+@router.delete("/smart/id/{id}", tags=["smart"])
+async def delete_smart(id: str):
+    """Deleta um documento específico"""
+
+    result = mongo_client.delete_document("smart", {"_id": ObjectId(str(id))})
 
     if 'Erro' in result:
         return JSONResponse(result, status_code=400)

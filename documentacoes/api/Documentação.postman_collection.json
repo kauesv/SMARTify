@@ -15,7 +15,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/usuarios/?nome=Andre&sobrenome=Farias",
+							"raw": "{{URL}}/usuarios/?nome=Andre7&sobrenome=Farias",
 							"host": [
 								"{{URL}}"
 							],
@@ -26,7 +26,7 @@
 							"query": [
 								{
 									"key": "nome",
-									"value": "Andre"
+									"value": "Andre7"
 								},
 								{
 									"key": "sobrenome",
@@ -296,12 +296,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
+							"raw": "{{URL}}/usuarios/id/66aadc350f83c96f717763cd",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"usuarios",
+								"id",
 								"66aadc350f83c96f717763cd"
 							]
 						}
@@ -322,12 +323,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
+									"raw": "{{URL}}/usuarios/id/66aadc350f83c96f717763cd",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"usuarios",
+										"id",
 										"66aadc350f83c96f717763cd"
 									]
 								}
@@ -373,13 +375,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
+							"raw": "{{URL}}/usuarios/id/66aadf21cc043dd3a4be982c",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"usuarios",
-								"66aadc350f83c96f717763cd"
+								"id",
+								"66aadf21cc043dd3a4be982c"
 							]
 						}
 					},
@@ -399,12 +402,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/usuarios/66aadc350f83c96f717763cd",
+									"raw": "{{URL}}/usuarios/id/66aadc350f83c96f717763cd",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"usuarios",
+										"id",
 										"66aadc350f83c96f717763cd"
 									]
 								}
@@ -432,6 +436,85 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"modified_count\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "usuarios",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usuarios/id/66aaf9b119a7b2ded6155139",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuarios",
+								"id",
+								"66aaf9b119a7b2ded6155139"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/usuarios/id/66aaf9b119a7b2ded6155139",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"usuarios",
+										"id",
+										"66aaf9b119a7b2ded6155139"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 27 Aug 2024 19:20:58 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "19"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deleted_count\": 1\n}"
 						}
 					]
 				}
@@ -631,14 +714,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/smart/id/66aba1b94e651aa2c3c3fdcb",
+							"raw": "{{URL}}/smart/id/66abaae1bc89a6a8c5e66db4",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"smart",
 								"id",
-								"66aba1b94e651aa2c3c3fdcb"
+								"66abaae1bc89a6a8c5e66db4"
 							]
 						}
 					},
@@ -649,12 +732,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{URL}}/smart/66aad6be5d4c89b5e5937c8d",
+									"raw": "{{URL}}/smart/id/66aad6be5d4c89b5e5937c8d",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"smart",
+										"id",
 										"66aad6be5d4c89b5e5937c8d"
 									]
 								}
@@ -761,13 +845,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+							"raw": "{{URL}}/smart/id/66cdf97d7e004c26fec19817",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"smart",
-								"66abaae1bc89a6a8c5e66db4"
+								"id",
+								"66cdf97d7e004c26fec19817"
 							]
 						}
 					},
@@ -787,12 +872,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+									"raw": "{{URL}}/smart/id/66abaae1bc89a6a8c5e66db4",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"smart",
+										"id",
 										"66abaae1bc89a6a8c5e66db4"
 									]
 								}
@@ -838,12 +924,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+							"raw": "{{URL}}/smart/id/66abaae1bc89a6a8c5e66db4",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"smart",
+								"id",
 								"66abaae1bc89a6a8c5e66db4"
 							]
 						}
@@ -864,12 +951,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}/smart/66abaae1bc89a6a8c5e66db4",
+									"raw": "{{URL}}/smart/id/66abaae1bc89a6a8c5e66db4",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"smart",
+										"id",
 										"66abaae1bc89a6a8c5e66db4"
 									]
 								}
@@ -897,6 +985,85 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"modified_count\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "smart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/smart/id/66cdd42192624c3281687d6f",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"smart",
+								"id",
+								"66cdd42192624c3281687d6f"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/smart/id/66cdd42192624c3281687d6f",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"smart",
+										"id",
+										"66cdd42192624c3281687d6f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 27 Aug 2024 16:12:02 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "19"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deleted_count\": 1\n}"
 						}
 					]
 				}

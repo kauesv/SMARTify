@@ -57,3 +57,20 @@ class MongoDBClient:
         except PyMongoError as e:
             #print(f"Erro ao remover documento: {e}")
             return {'Erro': str(e)}
+
+    def drop_database(self):
+        try:
+            self.client.drop_database(self.database_name)
+            print("Excluindo o banco de dados")
+        except PyMongoError as e:
+            #print(f"Erro ao remover documento: {e}")
+            return {'Erro': str(e)}
+
+    def drop_collection(self, collection_name: str):
+        try:
+            collection = self.db[collection_name]
+            collection.drop()
+            print("Excluindo a coleção do banco de dados")
+        except PyMongoError as e:
+            #print(f"Erro ao remover documento: {e}")
+            return {'Erro': str(e)}
