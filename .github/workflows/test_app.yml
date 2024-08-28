@@ -27,7 +27,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y docker-compose
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
 
       - name: Build and Create DB
         run: |
@@ -36,7 +35,7 @@ jobs:
       - name: Aguarde até que o MongoDB esteja pronto
         run: |
           echo "Waiting for MongoDB to be ready..."
-          until docker exec mongodb mongo --eval "print('MongoDB is up')" &>/dev/null; do
+          until docker exec smartify-mongodb-1 mongosh --eval "print('MongoDB is up')" &>/dev/null; do
           sleep 1
           done
 

@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: smartify-app
     ports:
       - "8000:8000"
     volumes:
@@ -18,10 +17,11 @@ services:
       - mongodb
     networks:
       - app-network
+    restart: on-failure  # Reinicia o container em caso de falha
 
   mongodb:
     image: mongo:6.0
-    container_name: mongodb
+    command: /bin/bash -c "apt-get update && apt-get install -y mongodb-mongosh && mongod"  #Instala o mongosh para validações
     ports:
       - "27017:27017"
     volumes:
