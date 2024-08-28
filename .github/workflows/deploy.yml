@@ -22,6 +22,6 @@ jobs:
           # Your Heroku App Name
           app_name: smartify-v01
           # Dokerfile path
-          dockerfile_path: Dockerfile
+          dockerfile_path: /
                 
                 
