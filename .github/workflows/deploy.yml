@@ -13,23 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Heroku CLI
-        run: |
-          curl https://cli-assets.heroku.com/install.sh | sh
-          heroku --version
-
-      - name: Log in to Heroku
-        run: heroku auth:token
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-
-      - name: Log in to Heroku Container Registry
-        run: heroku container:login
-
-      - name: Build and push Docker image
-        run: |
-          heroku container:push web -a ${{ secrets.HEROKU_APP_NAME }}
-
-      - name: Release Docker image
-        run: |
-          heroku container:release web -a ${{ secrets.HEROKU_APP_NAME }}
+      - name: Deploy Docker Image to Heroku App
+        uses: jctaveras/heroku-deploy@v3.1.0
+        with:
+          # Email Linked to your Heroku Account
+          email: ${{ secrets.HEROKU_EMAIL }}
+          # Your Heroku API Key
+          api_key: ${{ secrets.HEROKU_API_KEY }}
+          # Your Heroku App Name
+          app_name: smartify-v01
+          # Dokerfile path
+          dockerfile_path: Dockerfile
+          # Heroku Process Type
+          process_type: web
+          
