@@ -17,7 +17,6 @@ services:
       - mongodb
     networks:
       - app-network
-    restart: on-failure  # Reinicia o container em caso de falha
 
   mongodb:
     image: mongo:6.0
