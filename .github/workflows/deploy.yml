@@ -14,10 +14,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        
+      - name: Install Heroku CLI
+        run: |
+          curl https://cli-assets.heroku.com/install.sh | sh
+        
+      - name: Login to Heroku
+        run: heroku auth:token
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
 
-      - name: conexao com o heroku 
-        uses: CDNievas/heroku-action@v1.0
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
-          heroku_app_name: smartify-v1
+      - name: Deploy to Heroku
+        run: |
+          git remote add heroku https://git.heroku.com/smartify-v1.git
+          git push heroku HEAD:main
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
