@@ -37,4 +37,4 @@ jobs:
           done
 
       - name: Run tests
-        run: pytest
+        run: docker exec smartify_app_1 pytest
