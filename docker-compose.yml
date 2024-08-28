@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: app
     ports:
       - "8000:8000"
     volumes:
@@ -20,7 +21,7 @@ services:
 
   mongodb:
     image: mongo:6.0
-    command: /bin/bash -c "apt-get update && apt-get install -y mongodb-mongosh && mongod"  #Instala o mongosh para validações
+    container_name: mongodb
     ports:
       - "27017:27017"
     volumes:

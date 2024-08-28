@@ -9,7 +9,7 @@ COPY requirements.txt .
 
 # Instalando as dependências
 RUN apt-get update && \
-    pip install --no-cache-dir -r requirements.txt 
+    pip install --no-cache-dir -r requirements.txt
 
 # Copiando o código do projeto para dentro do container
 COPY . /app

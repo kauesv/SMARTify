@@ -1,4 +1,5 @@
-use SMARTify
+print('Executando usuarios.js');
+db = db.getSiblingDB('SMARTify');
 
 db.createCollection("usuarios", {
     validator: {
@@ -37,15 +38,3 @@ db.createCollection("usuarios", {
 });
 
 db.usuarios.createIndex({ nome: 1, sobrenome: 1 },{ unique: true });
-
-// db.usuarios.insertOne({
-//   "nome": "Kauê",
-//   "sobrenome": "Sousa",
-//   "criado_em": {
-//     "$date": "2024-10-10T03:00:00.000Z"
-//   },
-//   "atualizado_em": {
-//     "$date": "2024-10-10T03:00:00.000Z"
-//   },
-//   "deletado": false
-// })
