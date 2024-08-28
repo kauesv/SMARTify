@@ -33,5 +33,12 @@ jobs:
         run: |
           docker-compose up -d --build
 
+      - name: Aguarde até que o MongoDB esteja pronto
+        run: |
+          echo "Waiting for MongoDB to be ready..."
+          until docker exec mongodb mongo --eval "print('MongoDB is up')" &>/dev/null; do
+          sleep 1
+          done
+
       - name: Run tests
         run: pytest
