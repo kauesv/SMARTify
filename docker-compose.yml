@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: smartify-app
+    container_name: app
     ports:
       - "8000:8000"
     volumes:

@@ -8,7 +8,8 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Instalando as dependências
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get update && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Copiando o código do projeto para dentro do container
 COPY . /app

@@ -14,45 +14,20 @@ O projeto consiste em uma aplicação backend que utiliza APIs para criar e gere
 - T: Temporais (com um prazo definido para conclusão)
 
 ## Passo a passo para rodar o projeto
-### 1. Instalar Dependências
-- Baixe e instale o MongoDB e o NoSQLBooster no seu computador a partir de seus sites oficiais.
-
-### 2. Clonar o Repositório
+### 1. Clonar o Repositório
 - Clone o código em uma pasta local:
     ```
     git clone https://github.com/kauesv/SMARTify.git
     ```
 
-### 3. Criar Ambiente Virtual
-- Crie um ambiente virtual (Windows):
+### 2. Docker
+- Crie os containers do docker
     ```
-    py -m venv venv
+    docker-compose up --build
     ```
+- Dependendo do seu computador, espere alguns segundos para que o Mongodb seja iniciado.
 
-### 4. Ativar Ambiente Virtual
-- Ative o ambiente virtual (Windows):
-    ```
-    venv\Scripts\Activate
-    ```
-
-### 5. Instalar Dependências do Projeto
-- Instale usando o arquivo requirements:
-    ```
-    pip install -r requirements.txt 
-    ```
-
-### 6. Iniciar o Servidor
-- Suba o servidor com Uvicorn:
-    ```
-    uvicorn main:app --reload
-    ```
-
-### 7. Configurar MongoDB
-- Configure o MongoDB:
-    - Acesse o NoSQLBooster.
-    - Vá até a pasta documentacoes/mongodb, copie os scripts de criação das coleções de usuários e smart, e execute-os no NoSQLBooster.
-
-### 8. Teste das APIs
+### 3. Teste das APIs
 - Use o arquivo de documentação da API:
     - Encontre o arquivo na pasta documentacoes/api.
     - Importe-o no Postman para testar as rotas da API.
