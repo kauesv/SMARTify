@@ -6,14 +6,25 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.13.15 # This is the action
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Heroku CLI
+        uses: akshnz/heroku-cli-action@v1.2
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: smartify-v01
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
-          usedocker: true
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+
+      - name: Log in to Heroku Container Registry
+        run: heroku container:login
+
+      - name: Build and push Docker image
+        run: |
+          heroku container:push web -a ${{ secrets.HEROKU_APP_NAME }}
+
+      - name: Release Docker image
+        run: |
+          heroku container:release web -a ${{ secrets.HEROKU_APP_NAME }}
