@@ -6,27 +6,14 @@ on:
       - main
 
 jobs:
-  deploy:
-    name: Deploy to Heroku
+  build:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.base_ref == 'main'
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
-      - name: Install Heroku CLI
-        run: |
-          curl https://cli-assets.heroku.com/install.sh | sh
-        
-      - name: Login to Heroku
-        run: heroku auth:token
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-
-      - name: Deploy to Heroku
-        run: |
-          git remote add heroku https://git.heroku.com/smartify-v1.git
-          git push heroku HEAD:main
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.13.15 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: smartify-v1
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          usedocker: true
