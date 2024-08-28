@@ -6,22 +6,13 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to Heroku Using Docker Container
-        uses: cloutojp/heroku-deploy@v2.0.7
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.13.15 # This is the action
         with:
-          email: ${{ secrets.HEROKU_EMAIL }}
-          # Your Heroku API Key
-          api_key: ${{ secrets.HEROKU_API_KEY }}
-          # Your Heroku App Name
-          app_name: smartify-v01
-          # Dokerfile path
-          dockerfile_path: .
-                
-                
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: smartify-v01
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
