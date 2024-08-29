@@ -1,5 +1,5 @@
 name: Deploy to DigitalOcean
- 
+
 on:
   pull_request:
     branches:
@@ -23,6 +23,7 @@ jobs:
 
     - name: Deploy via SSH with password
       run: |
-        ssh -o StrictHostKeyChecking=no root@167.172.129.82"
+        ssh -o StrictHostKeyChecking=no root@167.172.129.82" << 'EOF'
           git pull origin main &&
           sudo docker-compose up -d --build
+        EOF
