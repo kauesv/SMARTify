@@ -14,7 +14,7 @@ jobs:
       uses: appleboy/ssh-action@v0.1.2
       with:
         host: ${{secrets.DIGITALOCEAN_SSH_HOST}} # IP address of the server you wish to ssh into
-        key: ${{secrets.DIGITALOCEAN_SSH_PUBLIC_KEY}} # Private or public key of the server
+        key: ${{secrets.DIGITALOCEAN_SSH_PRIVATE_KEY}} # Private or public key of the server
         username: ${{ secrets.DIGITALOCEAN_SSH_USERNAME }} # User of the server you want to ssh into
         script: |
           git clone https://github.com/kauesv/SMARTify.git
