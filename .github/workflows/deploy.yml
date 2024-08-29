@@ -1,14 +1,12 @@
 name: Deploy to DigitalOcean
 
 on:
-  workflow_run:
-    workflows: ["test"] # Nome do workflow de CI que é executado antes do deploy
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
-    if: github.event.workflow_run.conclusion == 'success' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
