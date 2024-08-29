@@ -20,6 +20,12 @@ jobs:
       uses: webfactory/ssh-agent@v0.7.0
       with:
         ssh-private-key: ${{ secrets.DIGITALOCEAN_SSH_PRIVATE_KEY }}
+        ssh-passphrase: ${{ secrets.DIGITALOCEAN_SENHA }}
+
+    - name: Add known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
     - name: Deploy via SSH with password
       run: |
