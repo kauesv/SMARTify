@@ -12,19 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Deploy Multiple Docker Images to Heroku Apps
-        uses: snithyanantham/docker-compose-multiple-apps-heroku-deploy@v1.0
-        with:
-          # Email linked to your Heroku account
-          email: ${{ secrets.HEROKU_EMAIL }}
-          # Your Heroku API Key
-          api_key: ${{ secrets.HEROKU_API_KEY }}
-          # Your Heroku App Name
-          app_name: smartify-v01
-          # docker-compose File Path
-          docker_compose_file: ./docker-compose.yml
-          # List of Docker Images generated from docker-compose and Heroku app names with type
-          heroku_apps: '[{"imagename":"mongo:6.0","appname":"mongodb","apptype":"web"},{"imagename":"app","appname":"app","apptype":"web"}]'
+      - name: Deploy to Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP_NAME: smartify-v01
+        run: |
+          heroku container:login
+          heroku container:push web --app ${{ env.HEROKU_APP_NAME }}
+          heroku container:release web --app ${{ env.HEROKU_APP_NAME }}
 
 
 # ### ⬇ Funcionando, mas com erros no heroku ⬇ ###
