@@ -19,3 +19,4 @@ jobs:
         script: |
           git clone https://github.com/kauesv/SMARTify.git
           git pull main
+          echo 'Deployment successful to digital ocean'
