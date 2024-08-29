@@ -20,4 +20,4 @@ jobs:
           cd SMARTify
           git pull origin main
           echo 'Deployment successful to digital ocean'
-          sudo docker-compose -d up --build
+          sudo docker-compose up -d --build
