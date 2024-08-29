@@ -18,8 +18,7 @@ jobs:
 
     - name: Deploy via SSH with password
       run: |
-        sshpass -p "${{ secrets.DIGITALOCEAN_SENHA }}" ssh -o StrictHostKeyChecking=no root@159.89.225.51 "
+        ssh root@159.89.225.51
+        sshpass -p "${{ secrets.DIGITALOCEAN_SENHA }}" ssh -o StrictHostKeyChecking=no root@159.89.225.51"
           git pull origin main &&
           sudo docker-compose up -d --build
-        "
-
