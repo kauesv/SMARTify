@@ -17,7 +17,7 @@ jobs:
         with:
           email: ${{ secrets.HEROKU_EMAIL }}
           api_key: ${{ secrets.HEROKU_API_KEY }}
-          docker_compose_file: './src/docker-compose.yml' 
+          docker_compose_file: './docker-compose.yml' 
           heroku_apps: '[{"imagename":"mongo:6.0","appname":"mongodb","apptype":"web"},{"imagename":"smartify-app","appname":"app","apptype":"web"}]' # List of Docker Image name, Heroku app and Heroku app type
 
 
