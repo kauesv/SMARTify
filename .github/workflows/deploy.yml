@@ -17,18 +17,12 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y openssh-client
 
     - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.7.0
+      uses: webfactory/ssh-agent@v0.5.3
       with:
-        ssh-private-key: ${{ secrets.DIGITALOCEAN_SSH_PRIVATE_KEY }}
-        ssh-passphrase: ${{ secrets.DIGITALOCEAN_SENHA }}
-
-    - name: Add known hosts
-      run: |
-        mkdir -p ~/.ssh
-        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Deploy via SSH with password
       run: |
-        ssh -o StrictHostKeyChecking=no root@159.89.225.51"
+        ssh -o StrictHostKeyChecking=no root@167.172.129.82"
           git pull origin main &&
           sudo docker-compose up -d --build
