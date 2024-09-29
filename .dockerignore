@@ -1,6 +1,5 @@
 # Excluir diretórios de cache do pytest
 __pycache__/
-*.pytest_cache/
 
 # Excluir outros arquivos e diretórios desnecessários
 *.log
