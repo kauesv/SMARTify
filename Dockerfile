@@ -1,18 +1,17 @@
-# Usando uma imagem base do Python
-FROM python:3.12-slim
+FROM python:3.12
 
 # Definindo o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copiando os arquivos de requisitos para dentro do container
-COPY requirements.txt .
+# Copiando o código do projeto para dentro do container
+COPY . /app
 
 # Instalando as dependências
 RUN apt-get update && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copiando o código do projeto para dentro do container
-COPY . /app
+# desabilita o buffering, para sair no terminal
+ENV PYTHONUNBUFFERED=1
 
 # Exponha a porta que a aplicação vai usar
 EXPOSE 8000

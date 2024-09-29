@@ -8,12 +8,8 @@ services:
     container_name: app
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app
     env_file:
       - ./config/config.env
-    environment:
-      - PYTHONUNBUFFERED=1
     depends_on:
       - mongodb
     networks:
