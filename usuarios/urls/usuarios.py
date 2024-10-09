@@ -1,18 +1,16 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
-from modelos.banco import MongoDBClient
-from dotenv import load_dotenv
+from database.banco import MongoDBClient
 from datetime import datetime
 from bson import ObjectId
-import os
 from typing import Dict, Any
+from config import Config
 
 
 # --------------
 #   configs
-load_dotenv(dotenv_path='config/config.env')
-uri = os.getenv('URI')
-database_name = os.getenv('DATABASE_NAME')
+uri = Config.BANCO_URI
+database_name = Config.DATABASE_NAME
 
 # --------------
 #   instancia o banco

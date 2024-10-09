@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from app.routers import smart, usuarios
+from usuarios.urls import usuarios
+from smart.urls import smart
 
 app = FastAPI()
 

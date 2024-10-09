@@ -1,6 +1,15 @@
-#pastas:
-__pycache__/
+# Ignora diretórios de cache do Python
+__pycache__
+
+# Ignora arquivos de configuração
+*.env
+
+# Ignora diretórios de ambientes virtuais
 venv/
+.venv
+
+# Ignora arquivos de log
+*.log
 
 #arquivos:
 anotacoes.txt
@@ -10,3 +19,6 @@ anotacoes.txt
 
 #Testes:
 .pytest_cache/
+
+#env
+*.env
